@@ -1,21 +1,26 @@
 import 'package:measurements/measurements.dart';
+import 'package:measurements/src/units/metric/liter.dart';
 
-export 'models/units/unit.dart';
-export 'models/units/unit_system.dart';
+export 'units/unit.dart';
+export 'units/unit_system.dart';
 
-class Measurement {
-  const Measurement._({
+abstract class Measurement {
+  const Measurement({
     required this.value,
     required this.unit,
   });
 
+  /// the value of the measurement, or how many there are
   final double value;
+
+  /// the [Unit] of the measurement
   final Unit unit;
 
-  factory Measurement.liter(double value) {
-    return Measurement._(
-      value: value,
-      unit: Unit.liter,
-    );
+  static Measurement liter(double value) {
+    return Liter(value);
   }
+
+  static milliliter(double value) {}
+
+  Measurement convertTo(Unit unit);
 }

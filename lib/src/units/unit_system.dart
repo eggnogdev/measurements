@@ -1,3 +1,6 @@
+/// Represets a unit system
+///
+/// ie. US Customary, Metric
 class UnitSystem {
   const UnitSystem._(this.name);
 
@@ -9,6 +12,11 @@ class UnitSystem {
 
   /// US Customary system
   static const usCustomary = UnitSystem._('US Customary');
+
+  @override
+  String toString() {
+    return name;
+  }
 
   @override
   operator ==(Object other) {

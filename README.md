@@ -24,3 +24,9 @@ You can also easily convert between units within the same `UnitSystem` as well a
 final millis = liters.convertTo(Unit.milliliters);
 final cups = liters.convertTo(Unit.cupsUS);
 ```
+
+## "primary" measurements
+
+You will see in some comments that certain `Measurement`s are considered the "primary" `Measurement` for the given `UnitSystem`. These are chosen arbitrarily, but it is mostly based on which measurement is used most often when cooking, because this package was primarily designed for that purpose.
+
+You don't need to know or understand primary measurements to use this package, but it is useful to know if you would like to contribute. How it works is that any conversion within, to, or from the given `UnitSystem` will go through the `UnitSystem`'s respective primary `Measurement`. This is done to reduce the number conversions that must be hard coded into the `Measurement.convertTo` methods.

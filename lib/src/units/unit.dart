@@ -16,8 +16,15 @@ class Unit {
   /// the [UnitSystem] this unit belongs to (ie. UnitSystem.metric)
   final UnitSystem system;
 
-  // liter unit
+  /// liter [Unit]
   static const liter = Unit._(
+    longForm: 'liter',
+    shortForm: 'l',
+    system: UnitSystem.metric,
+  );
+
+  /// milliliter [Unit]
+  static const milliliter = Unit._(
     longForm: 'milliliter',
     shortForm: 'ml',
     system: UnitSystem.metric,

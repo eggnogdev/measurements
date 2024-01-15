@@ -1,4 +1,4 @@
-import 'package:measurements/src/models/units/unit_system.dart';
+import 'package:measurements/src/units/unit_system.dart';
 
 class Unit {
   const Unit._({
@@ -7,13 +7,13 @@ class Unit {
     required this.system,
   });
 
-  // The short form of the unit (ie. ml)
+  /// The short form of the unit (ie. ml)
   final String shortForm;
 
-  // the long form of the unit (ie. milliliter)
+  /// the long form of the unit (ie. milliliter)
   final String longForm;
 
-  // the unit system (ie. UnitSystem.metric)
+  /// the [UnitSystem] this unit belongs to (ie. UnitSystem.metric)
   final UnitSystem system;
 
   // liter unit

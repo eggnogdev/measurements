@@ -1,13 +1,13 @@
 class UnitSystem {
   const UnitSystem._(this.name);
 
-  // name of the system (ie. Metric)
+  /// name of the system (ie. Metric)
   final String name;
 
-  // metric system
+  /// metric system
   static const metric = UnitSystem._('Metric');
 
-  // US Customary system
+  /// US Customary system
   static const usCustomary = UnitSystem._('US Customary');
 
   @override

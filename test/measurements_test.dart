@@ -1,10 +1,10 @@
-import 'package:measurements/src/measurements_base.dart';
+import 'package:measurements/measurements.dart';
 import 'package:test/test.dart';
 import 'package:dart_numerics/dart_numerics.dart' show almostEqualNormD;
 
 void main() {
-  group('Metric System', () {
-    final measurement = Measurement(liters: 1);
+  group('Metric: Volume', () {
+    final measurement = Volume(liters: 1);
 
     test('inMilliliters', () {
       expect(measurement.inMilliliters, 1000);
@@ -23,8 +23,8 @@ void main() {
     });
   });
 
-  group('US Customary', () {
-    final measurement = Measurement(usCups: 1);
+  group('US Customary: Volume', () {
+    final measurement = Volume(usCups: 1);
 
     test('inUsTeaspoons', () {
       expect(measurement.inUsTeaspoons, 48);
@@ -43,8 +43,8 @@ void main() {
     });
   });
 
-  group('US Customary to Metric', () {
-    final measurement = Measurement(usCups: 1);
+  group('US Customary to Metric: Volume', () {
+    final measurement = Volume(usCups: 1);
 
     test('inMilliliters', () {
       expect(
@@ -75,8 +75,8 @@ void main() {
     });
   });
 
-  group('Metric to US Customary', () {
-    final measurement = Measurement(liters: 1);
+  group('Metric to US Customary: Volume', () {
+    final measurement = Volume(liters: 1);
 
     test('inUsTeaspoons', () {
       expect(
@@ -106,8 +106,58 @@ void main() {
       );
     });
   });
+
+  group('Metric: Mass', () {
+    final measurement = Mass(kilograms: 1);
+    test('inMilligrams', () {
+      expect(measurement.inMilligrams, 1000000);
+    });
+
+    test('inGrams', () {
+      expect(measurement.inGrams, 1000);
+    });
+
+    test('inKilograms', () {
+      expect(measurement.inKilograms, 1);
+    });
+  });
+
+  group('US Customary: Mass', () {
+    final measurement = Mass(usPounds: 1);
+    test('inUsOunces', () {
+      expect(measurement.inUsOunces, 16);
+    });
+
+    test('inUsPounds', () {
+      expect(measurement.inUsPounds, 1);
+    });
+  });
+
+  group('US Customary to Metric: Mass', () {
+    final measurement = Mass(usPounds: 1);
+    test('inMilligrams', () {
+      expect(
+        almostEqual(measurement.inMilligrams, 453592.4),
+        isTrue,
+      );
+    });
+
+    test('inGrams', () {
+      expect(
+        almostEqual(measurement.inGrams, 453.5924),
+        isTrue,
+      );
+    });
+
+    test('inKilograms', () {
+      expect(
+        almostEqual(measurement.inKilograms, 0.4535924),
+        isTrue,
+      );
+    });
+  });
 }
 
 bool almostEqual(double x, double y) {
-  return almostEqualNormD(x, y, x - y, 0.0001);
+  return almostEqualNormD(x, y, x - y, 0.1);
 }

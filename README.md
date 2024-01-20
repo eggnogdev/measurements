@@ -11,6 +11,20 @@ View this project on [GitHub](https://github.com/eggnogdev/measurements) (Mirror
 
 Releases are available on [Codeberg](https://codeberg.org/eggnog/measurements/releases)
 
+## Installation
+
+This package is currently only available through git, so write the following into your pubspec.yaml.
+
+```yaml
+dependencies:
+  measurements:
+    git:
+      url: git@codeberg.org:eggnog/measurements.git
+      ref: 0.1.0 # the tag, commit, or branch that you want
+
+
+```
+
 ## How to use
 
 This package is written with great inspiration from `duration.dart`. The syntax is very similar. It supports both volume measurements and mass measurements.
@@ -54,3 +68,7 @@ print(measurement.inUsPounds); // 2.2046224999999997
 final measurement = Mass(kilograms: 1, usPounds: 1);
 print(measurement.inKilograms); // 1.4535923950699041
 ```
+
+## Support this project
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P5GQJKV)

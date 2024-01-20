@@ -1,38 +1,81 @@
-import 'units/metric/liter.dart';
-import 'units/metric/milliliter.dart';
-import 'units/unit.dart';
-
-export 'units/unit.dart';
-export 'units/unit_system.dart';
-export 'units/metric/liter.dart';
-export 'units/metric/milliliter.dart';
-export 'exceptions/measurement_conversion_exception.dart';
-
-/// Base Measurement class that defines all methods and values required by
-/// the derivative measurement classes. Can also be used to instantiate the
-/// derivative measurement classes.
-abstract class Measurement {
+class Measurement {
   const Measurement({
-    required this.value,
-    required this.unit,
-  });
+    double milliliters = 0,
+    double centiliters = 0,
+    double deciliters = 0,
+    double liters = 0,
+    double usTeaspoons = 0,
+    double usTablespoons = 0,
+    double usFluidOunces = 0,
+    double usCups = 0,
+  }) : this._milliliters(
+          milliliters +
+              millilitersPerCentiliter * centiliters +
+              millilitersPerDeciliter * deciliters +
+              millilitersPerLiter * liters +
+              millilitersPerUsTeaspoon * usTeaspoons +
+              millilitersPerUsTablespoon * usTablespoons +
+              millilitersPerUsFluidOunce * usFluidOunces +
+              millilitersPerUsCup * usCups,
+        );
 
-  /// the value of the measurement, or how many there are
-  final double value;
+  /// the number of milliliters per centiliter
+  static const millilitersPerCentiliter = 10;
 
-  /// the [Unit] of the measurement
-  final Unit unit;
+  /// the number of centiliters per deciliter
+  static const centilitersPerDeciliter = 10;
 
-  /// Create a [Liter] object
-  static Measurement liter(double value) {
-    return Liter(value);
-  }
+  /// the number of deciliters per liter
+  static const decilitersPerLiter = 10;
 
-  /// Create a [Milliliter] object
-  static Measurement milliliter(double value) {
-    return Milliliter(value);
-  }
+  /// the number of milliliters per deciliter
+  static const millilitersPerDeciliter =
+      millilitersPerCentiliter * centilitersPerDeciliter;
 
-  /// convert from `this` [Unit] to `other` [Unit]
-  Measurement convertTo(Unit other);
+  /// the number of milliliters per liter
+  static const millilitersPerLiter =
+      millilitersPerCentiliter * centilitersPerDeciliter * decilitersPerLiter;
+
+  /// the number of centiliters per liter
+  static const centilitersPerLiter =
+      centilitersPerDeciliter * decilitersPerLiter;
+
+  /// the number of US teaspoons per table spoon
+  static const usTeaspoonsPerUsTablespoon = 3;
+
+  /// the number of US tablespoons per fluid ounce
+  static const usTablespoonsPerUsFluidOunce = 2;
+
+  /// the number of US fluid ounces per cup
+  static const usFluidOuncesPerUsCup = 8;
+
+  /// the number of milliliters per US teaspoon
+  static const millilitersPerUsTeaspoon = 4.9289215937;
+
+  /// the number of milliliters per US tablespoon
+  static const millilitersPerUsTablespoon =
+      millilitersPerUsTeaspoon * usTeaspoonsPerUsTablespoon;
+
+  /// the number of milliliters per US fluid ounce
+  static const millilitersPerUsFluidOunce =
+      millilitersPerUsTablespoon * usTablespoonsPerUsFluidOunce;
+
+  /// the number of milliliters per US cup
+  static const millilitersPerUsCup =
+      millilitersPerUsFluidOunce * usFluidOuncesPerUsCup;
+
+  double get inMilliliters => _measurement;
+  double get inCentiliters => _measurement / millilitersPerCentiliter;
+  double get inDeciliters => _measurement / millilitersPerDeciliter;
+  double get inLiters => _measurement / millilitersPerLiter;
+  double get inUsTeaspoons => _measurement / millilitersPerUsTeaspoon;
+  double get inUsTablespoons => _measurement / millilitersPerUsTablespoon;
+  double get inUsFluidOunces => _measurement / millilitersPerUsFluidOunce;
+  double get inUsCups => _measurement / millilitersPerUsCup;
+
+  /// the total milliliters
+  final double _measurement;
+
+  const Measurement._milliliters(double measurement)
+      : _measurement = measurement;
 }

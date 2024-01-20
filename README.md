@@ -7,6 +7,10 @@ This package is primarily meant for cooking measurements, especially metric and 
 View this project on [Codeberg](https://codeberg.org/eggnog/measurements) (Main) <br>
 View this project on [GitHub](https://github.com/eggnogdev/measurements) (Mirror)
 
+## Releases
+
+Releases are available on [Codeberg](https://codeberg.org/eggnog/measurements/releases)
+
 ## How to use
 
 This package is written with great inspiration from `duration.dart`. The syntax is very similar. It supports both volume measurements and mass measurements.

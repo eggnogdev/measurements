@@ -9,7 +9,7 @@ View this project on [GitHub](https://github.com/eggnogdev/measurements) (Mirror
 
 ## How to use
 
-This library is written with great inspiration from `duration.dart`. The syntax is very similar. It supports both volume measurements and mass measurements.
+This package is written with great inspiration from `duration.dart`. The syntax is very similar. It supports both volume measurements and mass measurements.
 
 ### Volume
 

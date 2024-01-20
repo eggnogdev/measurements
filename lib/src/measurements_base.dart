@@ -64,13 +64,28 @@ class Measurement {
   static const millilitersPerUsCup =
       millilitersPerUsFluidOunce * usFluidOuncesPerUsCup;
 
+  /// this [Measurement] total measurement as milliliters
   double get inMilliliters => _measurement;
+
+  /// this [Measurement] total measurement as centiliters
   double get inCentiliters => _measurement / millilitersPerCentiliter;
+
+  /// this [Measurement] total measurement as deciliters
   double get inDeciliters => _measurement / millilitersPerDeciliter;
+
+  /// this [Measurement] total measurement as Liters
   double get inLiters => _measurement / millilitersPerLiter;
+
+  /// this [Measurement] total measurement as US Teaspoons
   double get inUsTeaspoons => _measurement / millilitersPerUsTeaspoon;
+
+  /// this [Measurement] total measurement as US Tablespoons
   double get inUsTablespoons => _measurement / millilitersPerUsTablespoon;
+
+  /// this [Measurement] total measurement as US Fluid Ounces
   double get inUsFluidOunces => _measurement / millilitersPerUsFluidOunce;
+
+  /// this [Measurement] total measurement as US Cups
   double get inUsCups => _measurement / millilitersPerUsCup;
 
   /// the total milliliters

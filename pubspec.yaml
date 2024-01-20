@@ -1,15 +1,13 @@
 name: measurements
-description: A starting point for Dart libraries or applications.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+description: adding measurements to dart.
+version: 0.1.0
+repository: https://codeberg.org/eggnog/measurements
 
 environment:
   sdk: ^3.1.5
 
-# Add regular dependencies here.
 dependencies:
   dart_numerics: ^0.0.6
-  # path: ^1.8.0
 
 dev_dependencies:
   lints: ^2.0.0

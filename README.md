@@ -4,6 +4,9 @@ Adding measurements to dart! Now you can represent liters, us tablespoons, and m
 
 This package is primarily meant for cooking measurements, especially metric and US Customary, so other units may not be supported for a while.
 
+View this project on [Codeberg](https://codeberg.org/eggnog/measurements) (Main)
+View this project on [GitHub](https://github.com/eggnogdev/measurements) (Mirror)
+
 ## How to use
 
 This library is written with great inspiration from `duration.dart`. The syntax is very similar.

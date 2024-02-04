@@ -4,12 +4,12 @@ Adding measurements to dart! Now you can represent liters, us tablespoons, and m
 
 This package is primarily meant for cooking measurements, especially metric and US Customary, so other units may not be supported for a while.
 
-View this project on [Codeberg](https://codeberg.org/eggnog/measurements) (Main) <br>
-View this project on [GitHub](https://github.com/eggnogdev/measurements) (Mirror)
+View this project on [GitHub](https://github.com/eggnogdev/measurements) (Main) <br>
+View this project on [Codeberg](https://codeberg.org/eggnog/measurements) (Mirror)
 
 ## Releases
 
-Releases are available on [Codeberg](https://codeberg.org/eggnog/measurements/releases)
+Releases are available on [GitHub](https://github.com/eggnogdev/measurements/releases)
 
 ## Installation
 
@@ -19,7 +19,7 @@ This package is currently only available through git, so write the following int
 dependencies:
   measurements:
     git:
-      url: https://codeberg.org/eggnog/measurements.git
+      url: https://github.com/eggnogdev/measurements.git
       ref: 0.1.0 # the tag, commit, or branch that you want
 
 

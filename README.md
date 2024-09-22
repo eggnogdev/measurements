@@ -68,7 +68,3 @@ print(measurement.inUsPounds); // 2.2046224999999997
 final measurement = Mass(kilograms: 1, usPounds: 1);
 print(measurement.inKilograms); // 1.4535923950699041
 ```
-
-## Support this project
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P5GQJKV)
